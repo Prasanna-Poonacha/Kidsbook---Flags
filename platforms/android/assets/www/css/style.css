@@ -1,0 +1,20 @@
+/* Empty. Add your own CSS if you like */
+.item-complex .item-content, .item-radio .item-content {  
+      background-color: #F2F2F2;
+}
+ 
+ .lightbackground{
+      background-color: lavender;
+ }
+
+.scroll-content {
+/*background-color: #EDF3FD;*/
+background-color: #F2F2F2;
+}
+
+.borderradius{
+	border-radius: 20px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: lightgrey;
+}
