@@ -1,0 +1,40 @@
+<ion-view title="Flags">
+	<ion-nav-buttons side="right">
+      <button class="button button-icon ion-ios7-refresh-empty" ng-click="reload();">       
+      </button>
+    </ion-nav-buttons>
+  <ion-content has-bouncing="true" ng-show="showDataView">	
+  	 <!--<ion-refresher
+		    pulling-text="Pull to Refresh..."
+		    on-refresh="doRefresh()">
+	  </ion-refresher>-->  
+	 <div class="list list-inset borderradius">
+	  <label class="item item-input" style="border:none">
+	    <i class="icon ion-search placeholder-icon"></i>
+	    <input type="text" ng-model="searchText" placeholder="Search Country">
+	  </label>
+	</div>
+	<!--<div class="bar bar-header item-input-inset">
+	  <label class="item-input-wrapper">
+	    <i class="icon ion-ios7-search placeholder-icon"></i>
+	    <input type="search" ng-model="country.Country" placeholder="Search Country">
+	  </label>	 
+	</div>-->
+         
+  	<ion-list>
+		<ion-item href="#/home/homedetail/{{item.FlagId}}" ng-repeat="item in listItems|startsWithLetter:searchText:'Country':searchText.length" class="item item-thumbnail-left item-icon-right">
+		    {{item.Country}}<img src="{{item.ImageUrl}}" alt="{{item.Country}}"><i class="icon ion-ios7-arrow-right"></i>
+		</ion-item>	        
+	</ion-list>   
+  </ion-content>
+  <ion-content has-bouncing="true" ng-show="errorView">
+  	<ion-list>
+		<!--<ion-item ng-click="reload()" class="item item-icon-right">
+		   No data - Click to refresh <i class="icon ion-ios7-refresh-empty"></i>
+		</ion-item>	 -->
+		<ion-item class="item">
+		   No data - Tap on Reload
+		</ion-item>       
+	</ion-list>   
+  </ion-content>
+</ion-view>
